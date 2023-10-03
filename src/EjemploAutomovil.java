@@ -38,6 +38,5 @@ public class EjemploAutomovil {
         System.out.println("Kilometros por litro: " + subaru.calcularConsumo(300, 0.6f));
         System.out.println("Kilometros por litro: " + subaru.calcularConsumo(300, 60));
         System.out.println("Kilometros por litro: " + nissan.calcularConsumo(300, 60));
-
     }
 }

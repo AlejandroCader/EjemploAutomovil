@@ -42,7 +42,24 @@ public class EjemploAutomovilArreglo {
 
         Arrays.sort(autos);
         for (Automovil auto: autos){
-            System.out.println(auto);
+            imprimirDatos(auto);
         }
     }
+
+    public static void imprimirDatos(Automovil auto){
+
+        if(auto.getConductor() != null){
+            System.out.println(auto.getConductor().toString());
+        }
+
+        if(auto.getId() != 0){
+            System.out.println(auto.getId());
+        }
+        if(auto.getColor() != null){
+            System.out.println(auto.getColor());
+        }
+
 }
+}
+//Tarea: Necesito un metodo que escriba todos los datos, el detalle por vehiculo, como el instanceof.
+//Solo imprimir lo de cada carro
