@@ -183,12 +183,13 @@ public class Automovil implements Comparable<Automovil>{
         if(conductor != null){
             detalle += "\nConductor subaru: " + this.getConductor();
         }
+        /*
         if (getRuedas() != null){
             detalle += "\nRuedas del automovil: ";
             for (Rueda r: this.getRuedas()){
             detalle += "\n" + r.getFabricante() + ", aro: " + r.getAro() + ", ancho: " + r.getAncho();
             }
-        }
+        }*/
         return detalle;
     }
     public String acelerar(int rpm){
@@ -211,8 +212,12 @@ public class Automovil implements Comparable<Automovil>{
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Automovil)) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Automovil)) {
+            return false;
+        }
         Automovil a = (Automovil) obj;
         return (this.fabricante != null && this.modelo != null
                 && this.fabricante.equals(a.getFabricante())
