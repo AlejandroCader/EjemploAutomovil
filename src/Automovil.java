@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Automovil implements Comparable<Automovil>{
     private int id;
     private String fabricante;
@@ -164,5 +167,65 @@ public class Automovil implements Comparable<Automovil>{
             this.ruedas[indiceRuedas++] = rueda;
         }
         return this;
+    }
+    public String verDetalle(){
+        String detalle = "auto.id = " +this.id +
+                "\nauto.fabricante = " + this.getFabricante() +
+                "\nauto.modelo = " + this.getModelo();
+        if(this.getTipo() != null){
+            detalle += "\nauto.tipo = " + this.getTipo().getDescripcion();
+        }
+        detalle += "\nauto.color = " + this.color +
+                "\nauto.patenteColor = " + colorPatente;
+        if(this.motor != null){
+            detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
+        }
+        if(conductor != null){
+            detalle += "\nConductor subaru: " + this.getConductor();
+        }
+        if (getRuedas() != null){
+            detalle += "\nRuedas del automovil: ";
+            for (Rueda r: this.getRuedas()){
+            detalle += "\n" + r.getFabricante() + ", aro: " + r.getAro() + ", ancho: " + r.getAncho();
+            }
+        }
+        return detalle;
+    }
+    public String acelerar(int rpm){
+        return "el auto " + this.fabricante + " acelerando a " + rpm + "rpm";
+    }
+    public String frenar(){
+        return this.fabricante + " " + this.modelo + " frenando!";
+    }
+    public String acelerarFrenar(int rpm){
+        String acelerar = this.acelerar(rpm);
+        String frenar = this.frenar();
+        return acelerar + "\n" + frenar;
+    }
+    public float calcularConsumo(int km, float porcentajeBencina){
+        return km/(this.getEstanque().getCapacidad() * (porcentajeBencina/100f));
+    }
+    public float calcularConsumoEstatico(int km, float porcentajeBencina){
+        return km/(Automovil.capacidadEstanqueEstatico * (porcentajeBencina/100f));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Automovil)) return false;
+        Automovil a = (Automovil) obj;
+        return (this.fabricante != null && this.modelo != null
+                && this.fabricante.equals(a.getFabricante())
+                && this.modelo.equals(a.getModelo()));
+    }
+
+    @Override
+    public String toString() {
+        return this.id + " : " + fabricante + " " + modelo;
+    }
+
+    @Override
+    public int compareTo(Automovil a) {
+        return this.fabricante.compareTo(a.fabricante);
     }
 }
