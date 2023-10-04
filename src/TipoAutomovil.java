@@ -1,7 +1,7 @@
 public enum TipoAutomovil {
     SEDAN("Sedan", "Auto mediano", 4),
     STATION_WAGON("Station Wagon", "Auto grande", 5),
-    HATCHBAG("Hatchbag", "Auto compacto", 5),
+    HATCHBACK("Hatchback", "Auto compacto", 5),
     PICKUP("Pickup", "Camioneta", 4),
     COUPE("Coupe", "Auto pequeño", 2),
     CONVERTIBLE("Convertible", "Auto deportivo", 2),

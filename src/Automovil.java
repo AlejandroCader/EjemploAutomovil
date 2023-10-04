@@ -210,6 +210,35 @@ public class Automovil implements Comparable<Automovil>{
         return km/(Automovil.capacidadEstanqueEstatico * (porcentajeBencina/100f));
     }
 
+    public void imprimirDatos() {
+
+        System.out.println("Marca: " + this.fabricante);
+        System.out.println("Modelo: " + this.modelo);
+
+        if (this.color != null) {
+            System.out.println("Color: " + this.color);
+        }
+
+        if (this.motor != null) {
+            System.out.println("Motor: " + this.motor.getTipo() + " " + this.motor.getCilindrada());
+        }
+
+        if (this.estanque != null) {
+            System.out.println("Capacidad del Estanque: " + this.estanque.getCapacidad());
+        }
+
+        if (this.conductor != null) {
+            System.out.println("Conductor: " + this.conductor.getNombre() + " " + this.conductor.getApellido());
+        }
+
+        if (this.tipo != null) {
+            System.out.println("Tipo de Automovil: " + this.tipo);
+        }
+
+        System.out.println(); // Línea en blanco para separar los datos de diferentes automóviles.
+    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

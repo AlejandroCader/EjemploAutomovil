@@ -7,7 +7,7 @@ public class EjemploAutomovilArreglo {
         subaru.setMotor(new Motor(2.0, TipoMotor.GASOLINA));
         subaru.setEstanque(new Estanque());
         subaru.setColor(Color.BLANCO);
-        subaru.setTipo(TipoAutomovil.HATCHBAG);
+        subaru.setTipo(TipoAutomovil.HATCHBACK);
         subaru.setConductor(conductorSubaru);
 
         Persona pato = new Persona("Pato", "Rodriguez");
@@ -42,24 +42,9 @@ public class EjemploAutomovilArreglo {
 
         Arrays.sort(autos);
         for (Automovil auto: autos){
-            imprimirDatos(auto);
+            auto.imprimirDatos();
         }
     }
-
-    public static void imprimirDatos(Automovil auto){
-
-        if(auto.getConductor() != null){
-            System.out.println(auto.getConductor().toString());
-        }
-
-        if(auto.getId() != 0){
-            System.out.println(auto.getId());
-        }
-        if(auto.getColor() != null){
-            System.out.println(auto.getColor());
-        }
-
-}
 }
 //Tarea: Necesito un metodo que escriba todos los datos, el detalle por vehiculo, como el instanceof.
 //Solo imprimir lo de cada carro
